@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import GlobalStyles from "./styles/GlobalStyles";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
+    <>
+      <GlobalStyles />
+      <div>Faq Accordion Card</div>
+      <div className="attribution">
+        Challenge by
         <a
-          className="App-link"
-          href="https://reactjs.org"
+          href="https://www.frontendmentor.io?ref=challenge"
           target="_blank"
-          rel="noopener noreferrer"
+          rel="noreferrer"
         >
-          Learn React
+          Frontend Mentor
         </a>
-      </header>
-    </div>
+        . Coded by <a href="https://github.com/hyundonny">Hyun Don Moon</a>.
+      </div>
+    </>
   );
-}
+};
 
 export default App;
