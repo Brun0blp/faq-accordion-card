@@ -13,6 +13,7 @@ const GlobalStyles = createGlobalStyle`
     // background gradient
     --soft-violet: hsl(273, 75%, 66%);
     --soft-blue: hsl(240, 73%, 65%);
+    --off-white: #FAF9F6;
 
     // dividers 
     --light-grayish-blue: hsl(240, 5%, 91%);
@@ -22,7 +23,7 @@ const GlobalStyles = createGlobalStyle`
 
   *,
   *::before,
-  *::after, {
+  *::after{
     box-sizing: border-box;
 	  margin: 0;
 	  padding: 0;
@@ -31,9 +32,18 @@ const GlobalStyles = createGlobalStyle`
 
   html {
     height: 100%;
+    background: linear-gradient(var(--soft-violet), var(--soft-blue));
   }
 
   body {
+    display: flex;
+    justify-content: center;
+    padding: 10rem;
+
+    .title {
+      color: var(--desaturated-blue);
+    }
+
     .attribution {
       font-size: 11px; 
       text-align: center;

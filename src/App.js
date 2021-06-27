@@ -1,10 +1,13 @@
 import GlobalStyles from "./styles/GlobalStyles";
 
+// components
+import Container from "./components/Container";
+
 const App = () => {
   return (
     <>
       <GlobalStyles />
-      <div>Faq Accordion Card</div>
+      <Container></Container>
       <div className="attribution">
         Challenge by
         <a
