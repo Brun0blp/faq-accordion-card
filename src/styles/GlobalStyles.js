@@ -32,7 +32,7 @@ const GlobalStyles = createGlobalStyle`
 
   html {
     height: 100%;
-    // background: linear-gradient(var(--soft-violet), var(--soft-blue));
+    background: linear-gradient(var(--soft-violet), var(--soft-blue));
   }
 
   body {

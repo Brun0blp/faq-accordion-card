@@ -9,6 +9,15 @@ const StyledContainer = styled.div`
   min-width: 330px;
   max-width: 345px;
   min-height: 500px;
+  align-items: center;
+  position: relative;
+
+  .title {
+    padding-top: 11rem;
+    font-size: 2.5rem;
+    letter-spacing: 0.1rem;
+    color: var(--desaturated-blue);
+  }
 
   @media (min-width: 900px) {
     flex-direction: row;
@@ -17,7 +26,12 @@ const StyledContainer = styled.div`
 `;
 
 const Container = ({ children }) => {
-  return <StyledContainer>{children}</StyledContainer>;
+  return (
+    <StyledContainer>
+      <h1 className="title">FAQ</h1>
+      {children}
+    </StyledContainer>
+  );
 };
 
 export default Container;

@@ -4,13 +4,15 @@ import mobileImg from "../images/illustration-woman-online-mobile.svg";
 import mobilePattern from "../images/bg-pattern-mobile.svg";
 
 const MobileImgWrapper = styled.div`
-  position: relative;
+  position: absolute;
   display: flex;
   flex-direction: column;
-  width: 266px;
+  width: 240px;
+  top: -110px;
 
   .woman {
     position: absolute;
+    right: 0;
   }
 
   .pattern {
