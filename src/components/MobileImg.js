@@ -5,22 +5,24 @@ import mobilePattern from "../images/bg-pattern-mobile.svg";
 
 const MobileImgWrapper = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 266px;
 
   .woman {
     position: absolute;
-    right: 0;
   }
 
   .pattern {
     position: absolute;
     right: 0;
-    top: 100px;
+    top: 109px;
   }
 `;
 
 const MobileImg = () => {
   return (
-    <MobileImgWrapper>
+    <MobileImgWrapper className="image">
       <img src={mobileImg} alt="Woman looking at a screen" className="woman" />
       <img src={mobilePattern} alt="shadow" className="pattern" />
     </MobileImgWrapper>
