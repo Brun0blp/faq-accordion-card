@@ -1,5 +1,8 @@
 import styled from "styled-components";
 
+import MobileImg from "./MobileImg";
+import Dropdown from "./Dropdown";
+
 const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -25,11 +28,14 @@ const StyledContainer = styled.div`
   }
 `;
 
-const Container = ({ children }) => {
+const Container = () => {
   return (
     <StyledContainer>
-      <h1 className="title">FAQ</h1>
-      {children}
+      <MobileImg />
+      <div className="faq">
+        <h1 className="title">FAQ</h1>
+        <Dropdown question={"Hello?"} answer={"Yes?"} />
+      </div>
     </StyledContainer>
   );
 };

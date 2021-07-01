@@ -2,15 +2,12 @@ import GlobalStyles from "./styles/GlobalStyles";
 
 // components
 import Container from "./components/Container";
-import MobileImg from "./components/MobileImg";
 
 const App = () => {
   return (
     <>
       <GlobalStyles />
-      <Container>
-        <MobileImg />
-      </Container>
+      <Container />
       <div className="attribution">
         Challenge by
         <a
