@@ -16,6 +16,7 @@ const StyledDropdown = styled.div`
 
   .answer {
     display: ${(props) => (props.open ? "block" : "none")};
+    overflow-wrap: break-word;
   }
 `;
 

@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 import MobileImg from "./MobileImg";
 import Dropdown from "./Dropdown";
+import { faqs } from "../faqs";
+
+const Dropdowns = faqs.map((faq) => (
+  <Dropdown question={faq.q} answer={faq.a} />
+));
 
 const StyledContainer = styled.div`
   display: flex;
@@ -9,8 +14,7 @@ const StyledContainer = styled.div`
   background-color: var(--off-white);
   border-radius: 1rem;
   width: 100%;
-  min-width: 330px;
-  max-width: 345px;
+  width: 345px;
   min-height: 500px;
   align-items: center;
   position: relative;
@@ -34,7 +38,7 @@ const Container = () => {
       <MobileImg />
       <div className="faq">
         <h1 className="title">FAQ</h1>
-        <Dropdown question={"Hello?"} answer={"Yes?"} />
+        {Dropdowns}
       </div>
     </StyledContainer>
   );
