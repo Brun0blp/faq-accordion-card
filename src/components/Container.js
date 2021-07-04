@@ -14,16 +14,25 @@ const StyledContainer = styled.div`
   background-color: var(--off-white);
   border-radius: 1rem;
   width: 100%;
-  width: 345px;
+  width: 330px;
+  min-width: 330px;
   min-height: 500px;
   align-items: center;
   position: relative;
+  padding: 0 3rem;
+  padding-bottom: 4.5rem;
 
   .title {
     padding-top: 11rem;
+    padding-bottom: 1.25rem;
     font-size: 2.5rem;
     letter-spacing: 0.1rem;
     color: var(--desaturated-blue);
+    text-align: center;
+  }
+
+  .faq {
+    width: 100%;
   }
 
   @media (min-width: 900px) {

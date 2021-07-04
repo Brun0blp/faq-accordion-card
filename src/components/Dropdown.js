@@ -4,12 +4,20 @@ import { useState } from "react";
 import arrow from "../images/icon-arrow-down.svg";
 
 const StyledDropdown = styled.div`
+  width: 100%;
+  border-bottom: 1px solid var(--light-grayish-blue);
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+
   .question {
     position: relative;
+    font-weight: ${(props) => (props.open ? "700" : "400")};
+    color: ${(props) =>
+      props.open ? "var(--desaturated-blue)" : "var(--very-dark-grayish-blue)"};
   }
 
   .question::after {
-    content: ${arrow};
+    content: url(${arrow});
     position: absolute;
     right: 0;
   }
@@ -17,6 +25,9 @@ const StyledDropdown = styled.div`
   .answer {
     display: ${(props) => (props.open ? "block" : "none")};
     overflow-wrap: break-word;
+    padding-top: 1rem;
+    padding-right: 1.25rem;
+    color: var(--dark-grayish-blue);
   }
 `;
 

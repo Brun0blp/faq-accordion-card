@@ -8,7 +8,7 @@ const MobileImgWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 240px;
-  top: -110px;
+  top: -108px;
 
   .woman {
     position: absolute;
