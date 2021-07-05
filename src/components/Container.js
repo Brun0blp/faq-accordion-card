@@ -12,20 +12,19 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   background-color: var(--off-white);
-  border-radius: 1rem;
+  border-radius: 2rem;
   width: 100%;
   width: 330px;
-  min-width: 315px;
-  min-height: 470px;
+  min-width: 300px;
   align-items: center;
   position: relative;
-  padding-right: 3rem;
-  padding-left: 3rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
   box-shadow: 0 2.25rem 2.25rem -1rem var(--darker-blue);
 
   .title {
     padding-top: 11rem;
-    padding-bottom: 1.25rem;
+    padding-bottom: 3rem;
     font-size: 2.5rem;
     letter-spacing: 0.1rem;
     color: var(--desaturated-blue);

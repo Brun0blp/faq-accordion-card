@@ -8,17 +8,23 @@ const StyledDropdown = styled.div`
   border-bottom: 1px solid var(--light-grayish-blue);
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
+  user-select: none;
+
+  &:last-of-type {
+    margin-bottom: 4rem;
+  }
 
   .question {
     position: relative;
+    font-size: 1.1rem;
     font-weight: ${(props) => (props.open ? "700" : "400")};
     color: ${(props) =>
-      props.open ? "var(--desaturated-blue)" : "var(--very-dark-grayish-blue)"};
+      props.open ? "var(--desaturated-blue)" : "var(--dark-grayish-blue)"};
   }
 
   .question::after {
     ${(props) => props.open && "transform: rotate(180deg);"};
-    transition: all 0.25s ease-in;
+    transition: all 0.3s ease-in;
     content: url(${arrow});
     position: absolute;
     right: 0;
@@ -30,6 +36,7 @@ const StyledDropdown = styled.div`
     padding-top: 1rem;
     padding-right: 1.25rem;
     color: var(--dark-grayish-blue);
+    line-height: 1.5;
   }
 `;
 
@@ -41,10 +48,8 @@ const Dropdown = ({ question, answer }) => {
   };
 
   return (
-    <StyledDropdown open={open}>
-      <p className="question" onClick={handleClick}>
-        {question}
-      </p>
+    <StyledDropdown open={open} onClick={handleClick}>
+      <p className="question">{question}</p>
       <p className="answer">{answer}</p>
     </StyledDropdown>
   );
