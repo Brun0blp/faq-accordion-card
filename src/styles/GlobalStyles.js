@@ -13,6 +13,7 @@ const GlobalStyles = createGlobalStyle`
     // background gradient
     --soft-violet: hsl(273, 75%, 66%);
     --soft-blue: hsl(240, 73%, 65%);
+    --darker-blue: hsl(260, 73%, 45%);
     --off-white: #FAF9F6;
 
     // dividers 

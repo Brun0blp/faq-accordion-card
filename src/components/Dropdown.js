@@ -6,7 +6,7 @@ import arrow from "../images/icon-arrow-down.svg";
 const StyledDropdown = styled.div`
   width: 100%;
   border-bottom: 1px solid var(--light-grayish-blue);
-  padding-top: 1.5rem;
+  margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
 
   .question {
@@ -17,6 +17,8 @@ const StyledDropdown = styled.div`
   }
 
   .question::after {
+    ${(props) => props.open && "transform: rotate(180deg);"};
+    transition: all 0.25s ease-in;
     content: url(${arrow});
     position: absolute;
     right: 0;

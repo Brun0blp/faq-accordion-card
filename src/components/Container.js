@@ -15,12 +15,13 @@ const StyledContainer = styled.div`
   border-radius: 1rem;
   width: 100%;
   width: 330px;
-  min-width: 330px;
-  min-height: 500px;
+  min-width: 315px;
+  min-height: 470px;
   align-items: center;
   position: relative;
-  padding: 0 3rem;
-  padding-bottom: 4.5rem;
+  padding-right: 3rem;
+  padding-left: 3rem;
+  box-shadow: 0 2.25rem 2.25rem -1rem var(--darker-blue);
 
   .title {
     padding-top: 11rem;
