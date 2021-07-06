@@ -20,6 +20,12 @@ const StyledDropdown = styled.div`
     font-weight: ${(props) => (props.open ? "700" : "400")};
     color: ${(props) =>
       props.open ? "var(--desaturated-blue)" : "var(--dark-grayish-blue)"};
+    cursor: pointer;
+  }
+
+  .question:hover {
+    color: ${(props) =>
+      props.open ? "var(--desaturated-blue)" : "var(--soft-red)"};
   }
 
   .question::after {

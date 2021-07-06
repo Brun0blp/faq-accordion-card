@@ -13,7 +13,6 @@ const StyledContainer = styled.div`
   flex-direction: column;
   background-color: var(--off-white);
   border-radius: 2rem;
-  width: 100%;
   width: 330px;
   min-width: 300px;
   align-items: center;
@@ -22,29 +21,47 @@ const StyledContainer = styled.div`
   padding-left: 2rem;
   box-shadow: 0 2.25rem 2.25rem -1rem var(--darker-blue);
 
-  .title {
-    padding-top: 11rem;
-    padding-bottom: 3rem;
-    font-size: 2.5rem;
-    letter-spacing: 0.1rem;
-    color: var(--desaturated-blue);
-    text-align: center;
+  .image {
+    width: 240px;
+    position: relative;
+    top: -9rem;
+
+    .woman {
+      position: absolute;
+      right: 0;
+    }
+
+    .pattern {
+      position: absolute;
+      right: 0;
+      top: 109px;
+    }
   }
 
   .faq {
     width: 100%;
+
+    .title {
+      padding-top: 11rem;
+      padding-bottom: 3rem;
+      font-size: 2.5rem;
+      letter-spacing: 0.1rem;
+      color: var(--desaturated-blue);
+      text-align: center;
+    }
   }
 
   @media (min-width: 900px) {
-    flex-direction: row;
-    max-width: 800px;
+    width: 800px;
   }
 `;
 
 const Container = () => {
   return (
     <StyledContainer>
-      <MobileImg />
+      <div className="image">
+        <MobileImg />
+      </div>
       <div className="faq">
         <h1 className="title">FAQ</h1>
         {Dropdowns}
