@@ -4,7 +4,6 @@ import { useState } from "react";
 import arrow from "../images/icon-arrow-down.svg";
 
 const StyledDropdown = styled.div`
-  width: 100%;
   border-bottom: 1px solid var(--light-grayish-blue);
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;
@@ -43,6 +42,10 @@ const StyledDropdown = styled.div`
     padding-right: 1.25rem;
     color: var(--dark-grayish-blue);
     line-height: 1.5;
+  }
+
+  @media (min-width: 900px) {
+    max-width: 320px;
   }
 `;
 
