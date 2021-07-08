@@ -95,8 +95,16 @@ const StyledContainer = styled.div`
 `;
 
 const Container = () => {
+  const [openIdx, setOpenIdx] = useState(0);
   const Dropdowns = faqs.map((faq, idx) => (
-    <Dropdown question={faq.q} answer={faq.a} key={idx} idx={idx} />
+    <Dropdown
+      question={faq.q}
+      answer={faq.a}
+      key={idx}
+      idx={idx}
+      openIdx={openIdx}
+      setOpenIdx={setOpenIdx}
+    />
   ));
 
   return (

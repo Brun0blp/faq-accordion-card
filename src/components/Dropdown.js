@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { useState } from "react";
 
 import arrow from "../images/icon-arrow-down.svg";
 
@@ -49,12 +48,12 @@ const StyledDropdown = styled.div`
   }
 `;
 
-const Dropdown = ({ question, answer, idx }) => {
-  const handleClick = (e) => {
-    console.dir(e.target);
+const Dropdown = ({ question, answer, idx, openIdx, setOpenIdx }) => {
+  const handleClick = () => {
+    idx === openIdx ? setOpenIdx(null) : setOpenIdx(idx);
   };
   return (
-    <StyledDropdown open={false} idx={idx} onClick={handleClick}>
+    <StyledDropdown open={idx === openIdx} onClick={handleClick}>
       <p className="question">{question}</p>
       <p className="answer">{answer}</p>
     </StyledDropdown>
