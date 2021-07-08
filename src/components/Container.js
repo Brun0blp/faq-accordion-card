@@ -1,43 +1,54 @@
+import { useState } from "react";
 import styled from "styled-components";
 
-import MobileImg from "./MobileImg";
 import Dropdown from "./Dropdown";
 import { faqs } from "../faqs";
 
-import bgPattern from "../images/bg-pattern-desktop.svg";
+// desktop image
+import desktopPattern from "../images/bg-pattern-desktop.svg";
 import box from "../images/illustration-box-desktop.svg";
-import woman from "../images/illustration-woman-online-desktop.svg";
+import desktopWoman from "../images/illustration-woman-online-desktop.svg";
 
-const Dropdowns = faqs.map((faq) => (
-  <Dropdown question={faq.q} answer={faq.a} />
-));
+// mobile image
+import mobileWoman from "../images/illustration-woman-online-mobile.svg";
+import mobilePattern from "../images/bg-pattern-mobile.svg";
 
 const StyledContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  background-color: var(--off-white);
-  border-radius: 2rem;
-  width: 330px;
-  align-items: center;
   position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  width: 330px;
+  margin-top: 12rem;
   padding-right: 2rem;
   padding-left: 2rem;
+
+  border-radius: 2rem;
+  background-color: var(--off-white);
   box-shadow: 0 2.25rem 2.25rem -1rem var(--darker-blue);
 
-  .mobile-image {
-    width: 240px;
-    position: relative;
-    top: -9rem;
+  .title {
+    color: var(--desaturated-blue);
+  }
 
+  .image {
+    width: 240px;
+    height: 12rem;
+    position: relative;
+  }
+
+  .mobile-image {
     .woman {
       position: absolute;
+      top: -9rem;
       right: 0;
     }
 
     .pattern {
       position: absolute;
+      top: -1rem;
       right: 0;
-      top: 109px;
     }
   }
 
@@ -49,7 +60,6 @@ const StyledContainer = styled.div`
     width: 100%;
 
     .title {
-      margin-top: 11rem;
       padding-bottom: 3rem;
       font-size: 2.5rem;
       letter-spacing: 0.1rem;
@@ -69,36 +79,6 @@ const StyledContainer = styled.div`
     }
 
     .desktop-image {
-      overflow: hidden;
-      width: 400px;
-      margin-top: -3rem;
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      margin-right: 7rem;
-
-      .woman {
-        width: 125%;
-        position: absolute;
-        margin-top: 9rem;
-        right: 0;
-        z-index: 10;
-      }
-
-      .pattern {
-        width: 275%;
-        right: 0;
-        margin-top: -21rem;
-        position: absolute;
-      }
-
-      .box {
-        width: 50%;
-        z-index: 999;
-        margin-top: 19rem;
-        margin-left: -8.5rem;
-        position: absolute;
-      }
     }
 
     .faq {
@@ -115,15 +95,38 @@ const StyledContainer = styled.div`
 `;
 
 const Container = () => {
+  const Dropdowns = faqs.map((faq, idx) => (
+    <Dropdown question={faq.q} answer={faq.a} key={idx} idx={idx} />
+  ));
+
   return (
     <StyledContainer>
-      <div className="image mobile-image">
-        <MobileImg />
-      </div>
-      <div className="image desktop-image">
-        <img src={box} className="box" alt="box" />
-        <img src={woman} className="woman" alt="a woman" />
-        <img src={bgPattern} className="pattern" alt="background pattern" />
+      <div className="image">
+        <div className="mobile-image">
+          <img
+            src={mobileWoman}
+            alt="Woman looking at a screen"
+            className="woman"
+          />
+          <img
+            src={mobilePattern}
+            alt="background pattern"
+            className="pattern"
+          />
+        </div>
+        <div className="desktop-image">
+          <img src={box} className="box" alt="box" />
+          <img
+            src={desktopWoman}
+            className="woman"
+            alt="Woman looking at a screen"
+          />
+          <img
+            src={desktopPattern}
+            className="pattern"
+            alt="background pattern"
+          />
+        </div>
       </div>
       <div className="faq">
         <h1 className="title">FAQ</h1>

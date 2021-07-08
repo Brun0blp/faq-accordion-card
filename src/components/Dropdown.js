@@ -49,15 +49,12 @@ const StyledDropdown = styled.div`
   }
 `;
 
-const Dropdown = ({ question, answer }) => {
-  const [open, setOpen] = useState(false);
-
-  const handleClick = () => {
-    setOpen((prev) => !prev);
+const Dropdown = ({ question, answer, idx }) => {
+  const handleClick = (e) => {
+    console.dir(e.target);
   };
-
   return (
-    <StyledDropdown open={open} onClick={handleClick}>
+    <StyledDropdown open={false} idx={idx} onClick={handleClick}>
       <p className="question">{question}</p>
       <p className="answer">{answer}</p>
     </StyledDropdown>

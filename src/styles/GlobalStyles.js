@@ -35,21 +35,15 @@ const GlobalStyles = createGlobalStyle`
     background-image: linear-gradient(var(--soft-violet), var(--soft-blue));
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 100%;
+    min-height: 100vh;
     min-width: 375px;
   }
 
   body {
-    padding-top: 14rem;
-    padding-bottom: 10rem;
-    min-width: 375px;
+    width: 100%;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
-
-    .title {
-      color: var(--desaturated-blue);
-    }
   }
 `;
 
