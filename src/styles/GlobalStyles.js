@@ -14,7 +14,7 @@ const GlobalStyles = createGlobalStyle`
     --soft-violet: hsl(273, 75%, 66%);
     --soft-blue: hsl(240, 73%, 65%);
     --darker-blue: hsl(260, 73%, 45%);
-    --off-white: #FAF9F6;
+    --white: #FFF;
 
     // dividers 
     --light-grayish-blue: hsl(240, 5%, 91%);
@@ -35,15 +35,20 @@ const GlobalStyles = createGlobalStyle`
     background-image: linear-gradient(var(--soft-violet), var(--soft-blue));
     background-size: cover;
     background-repeat: no-repeat;
-    min-height: 100vh;
-    min-width: 375px;
+    height: 100vh;
+    min-width: 320px;
   }
 
   body {
     width: 100%;
-    min-height: 100vh;
+    min-height: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+
+    @media (max-height: 800px) and (max-width: 1000px) {
+      padding-top: 100px;
+    }
   }
 `;
 

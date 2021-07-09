@@ -19,18 +19,11 @@ const StyledContainer = styled.div`
   align-items: center;
   flex-direction: column;
 
-  width: 330px;
-  margin-top: 12rem;
-  padding-right: 2rem;
-  padding-left: 2rem;
+  width: 315px;
 
   border-radius: 2rem;
-  background-color: var(--off-white);
+  background-color: var(--white);
   box-shadow: 0 2.25rem 2.25rem -1rem var(--darker-blue);
-
-  .title {
-    color: var(--desaturated-blue);
-  }
 
   .image {
     width: 240px;
@@ -58,6 +51,8 @@ const StyledContainer = styled.div`
 
   .faq {
     width: 100%;
+    padding-right: 2rem;
+    padding-left: 2rem;
 
     .title {
       padding-bottom: 3rem;
@@ -68,23 +63,64 @@ const StyledContainer = styled.div`
     }
   }
 
-  @media (min-width: 900px) {
-    width: 800px;
-    height: 450px;
+  @media (min-width: 1000px) {
+    width: 900px;
+    height: 500px;
     flex-direction: row;
     align-items: start;
+
+    .image {
+      width: 50%;
+      height: 100%;
+    }
 
     .mobile-image {
       display: none;
     }
 
     .desktop-image {
+      display: block;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .box-wrapper {
+      position: absolute;
+      z-index: 100;
+      left: -7.75rem;
+      top: 17rem;
+    }
+
+    .overflow-hidden {
+      height: 500px;
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+
+    .woman {
+      width: 100%;
+      position: absolute;
+      right: 6.5rem;
+      z-index: 10;
+    }
+
+    .pattern {
+      position: absolute;
+      width: 220%;
+      top: -25rem;
+      right: 6.5rem;
+      z-index: 1;
     }
 
     .faq {
       justify-content: center;
       height: 100%;
       width: 50%;
+      padding: 0;
 
       .title {
         margin-top: 6rem;
@@ -95,7 +131,7 @@ const StyledContainer = styled.div`
 `;
 
 const Container = () => {
-  const [openIdx, setOpenIdx] = useState(0);
+  const [openIdx, setOpenIdx] = useState(null);
   const Dropdowns = faqs.map((faq, idx) => (
     <Dropdown
       question={faq.q}
@@ -108,7 +144,7 @@ const Container = () => {
   ));
 
   return (
-    <StyledContainer>
+    <StyledContainer onClick={() => setOpenIdx(null)}>
       <div className="image">
         <div className="mobile-image">
           <img
@@ -123,17 +159,21 @@ const Container = () => {
           />
         </div>
         <div className="desktop-image">
-          <img src={box} className="box" alt="box" />
-          <img
-            src={desktopWoman}
-            className="woman"
-            alt="Woman looking at a screen"
-          />
-          <img
-            src={desktopPattern}
-            className="pattern"
-            alt="background pattern"
-          />
+          <div className="box-wrapper">
+            <img src={box} className="box" alt="box" />
+          </div>
+          <div className="overflow-hidden">
+            <img
+              src={desktopWoman}
+              className="woman"
+              alt="Woman looking at a screen"
+            />
+            <img
+              src={desktopPattern}
+              className="pattern"
+              alt="background pattern"
+            />
+          </div>
         </div>
       </div>
       <div className="faq">

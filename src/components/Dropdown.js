@@ -49,9 +49,11 @@ const StyledDropdown = styled.div`
 `;
 
 const Dropdown = ({ question, answer, idx, openIdx, setOpenIdx }) => {
-  const handleClick = () => {
+  const handleClick = (e) => {
+    e.stopPropagation();
     idx === openIdx ? setOpenIdx(null) : setOpenIdx(idx);
   };
+
   return (
     <StyledDropdown open={idx === openIdx} onClick={handleClick}>
       <p className="question">{question}</p>
