@@ -35,7 +35,7 @@ Mobile
 
 ### Links
 
-- Live Site URL: [live site](https://faq-accordion-card-two.vercel.app/)
+-[Live Site URL](https://faq-accordion-card-two.vercel.app/)
 
 ## My process
 
